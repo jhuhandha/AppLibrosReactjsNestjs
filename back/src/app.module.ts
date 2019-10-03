@@ -6,6 +6,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LibrosModule } from './libros/libros.module';
 import { CategoriasModule } from './categorias/categorias.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 const URL = process.env.MONGODB;
 
@@ -13,7 +15,7 @@ const URL = process.env.MONGODB;
   imports: [
     LibrosModule, 
     CategoriasModule, 
-    MongooseModule.forRoot(URL)
+    MongooseModule.forRoot(URL), AuthModule, UsersModule
   ],
   controllers: [AppController],
   providers: [AppService],
